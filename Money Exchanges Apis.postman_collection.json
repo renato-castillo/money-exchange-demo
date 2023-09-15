@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "e90b08ad-5340-45d6-b0cc-ec938114d042",
+		"name": "TEST BP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11896355",
+		"_collection_link": "https://dark-eclipse-541607.postman.co/workspace/Bootcamp~97eaa3b2-0e94-479b-bdd2-eb584364a896/collection/11896355-e90b08ad-5340-45d6-b0cc-ec938114d042?action=share&source=collection_link&creator=11896355"
+	},
+	"item": [
+		{
+			"name": "Agregar Moneda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJ1c2VybmFtZSI6InJjYXN0aWxsbyIsInN1YiI6InJjYXN0aWxsbyIsImlhdCI6MTY5NDczMjEyOCwiZXhwIjoxNjk0NzM0OTI4fQ.i0ojJPtFLs5k9Sx29bjcmr38oRRomYwQlVa257PEveJPyZtuUBkwkehUHO3laXILk75x6m2EcIzvd2ts5rShLg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dolar\",\r\n    \"symbol\": \"$\",\r\n    \"createdBy\": \"TESTAPP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/currencies"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Monedas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/currencies"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Tipos de Cambio por Moneda Origen y Destino",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currencyOriginId\": 1,\r\n    \"currencyTargetId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/exchanges/getExchanges"
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Tipo de Cambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicmNhc3RpbGxvIiwicm9sZXMiOlsiYWRtaW4iXSwic3ViIjoicmNhc3RpbGxvIiwiaWF0IjoxNjk0NzMwOTQ2LCJleHAiOjE2OTQ3MzM3NDZ9.WvTpezB4LOn_Hj8MDIlc8uWZ0eV8udBxDQMPPSQ8NdBIq6jHvwUz2DJObJjJaDijKSQTmcv7CaaCpfTYMpIPUQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currencyOriginId\": 2,\r\n    \"currencyTargetId\": 1,\r\n    \"exchange\": 0.97,\r\n    \"createdBy\": \"TESTAPP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/exchanges"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar TC",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/currencies"
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"rcastillo\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "Realizar cambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJ1c2VybmFtZSI6InJjYXN0aWxsbyIsInN1YiI6InJjYXN0aWxsbyIsImlhdCI6MTY5NDczODc5NiwiZXhwIjoxNjk0NzQxNTk2fQ.LrfgTNywjvy30AWQsiSpv3pMbatmNPJOaM_5xVY6PMvsVpkJUD38VSnQARfEDcCdmCulx2nzMRAOzESEBAi9Rg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"currencyOriginId\": 1,\r\n    \"currencyTargetId\": 2,\r\n    \"amount\": 50.00,\r\n    \"exchangeRate\": 1.06000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/exchanges/doExchange"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Moneda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJ1c2VybmFtZSI6InJjYXN0aWxsbyIsInN1YiI6InJjYXN0aWxsbyIsImlhdCI6MTY5NDczMjEyOCwiZXhwIjoxNjk0NzM0OTI4fQ.i0ojJPtFLs5k9Sx29bjcmr38oRRomYwQlVa257PEveJPyZtuUBkwkehUHO3laXILk75x6m2EcIzvd2ts5rShLg"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Dolar\",\r\n    \"symbol\": \"$\",\r\n    \"createdBy\": \"TESTAPP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/currencies/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar TC",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJ1c2VybmFtZSI6InJjYXN0aWxsbyIsInN1YiI6InJjYXN0aWxsbyIsImlhdCI6MTY5NDczODc5NiwiZXhwIjoxNjk0NzQxNTk2fQ.LrfgTNywjvy30AWQsiSpv3pMbatmNPJOaM_5xVY6PMvsVpkJUD38VSnQARfEDcCdmCulx2nzMRAOzESEBAi9Rg"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"exchange\": 1.07000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/exchanges/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Exchanges",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlcyI6WyJhZG1pbiJdLCJ1c2VybmFtZSI6InJjYXN0aWxsbyIsInN1YiI6InJjYXN0aWxsbyIsImlhdCI6MTY5NDczODc5NiwiZXhwIjoxNjk0NzQxNTk2fQ.LrfgTNywjvy30AWQsiSpv3pMbatmNPJOaM_5xVY6PMvsVpkJUD38VSnQARfEDcCdmCulx2nzMRAOzESEBAi9Rg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/exchanges/userExchanges"
+			},
+			"response": []
+		}
+	]
+}
