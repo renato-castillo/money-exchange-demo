@@ -159,7 +159,7 @@ public class ExchangeHandler {
                                                         .body(fromValue(userExchangeDto));
                                             });
                                 });
-                    }).switchIfEmpty(ServerResponse.status(500).body(fromValue("No se encontró un tipo de cambio para las monedas solicitadas")));
+                    }).switchIfEmpty(Mono.error(new Exception("No se encontró un tipo de cambio para las monedas solicitadas")));
 
 
 
